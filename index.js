@@ -34,6 +34,24 @@ router.get('/about',function(req, res){
     res.sendFile(path + '/pages/about.html');
   });
 
+router.get('/services',function(req,res){
+  res.sendFile(path + '/pages/services.html');
+});
+router.get('/portfolio',function(req,res){
+  res.sendFile(path + '/pages/portfolio.html');
+});
+router.get('/index',function(req,res){
+  res.sendFile(path + '/pages/index.html');
+});
+router.get('/blog',function(req,res){
+  res.sendFile(path + '/pages/blog.html');
+});
+router.get('/team',function(req,res){
+  res.sendFile(path + '/pages/team.html');
+});
+router.get('/contact',function(req,res){
+  res.sendFile(path + '/pages/contact.html');
+});
 // Try navigating to the /about directory on the website. Now, the about.html page will show.
 // Note: it won't work if you click the "about" button because we haven't changed the code there!
 
