@@ -8,8 +8,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 body {
-  font-family: "Terminal Dosis",  sans-serif;
+  font-family: dosis,  sans-serif, !important;
   color: #444;
 }
 
@@ -24,7 +27,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Terminal Dosis", sans-serif;
+  font-family: dosis, sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -132,7 +135,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: "Terminal Dosis", sans-serif;
+  font-family: dosis, sans-serif;
   font-size: 14px;
   color: #fff;
   white-space: nowrap;

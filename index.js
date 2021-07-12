@@ -52,6 +52,9 @@ router.get('/team',function(req,res){
 router.get('/contact',function(req,res){
   res.sendFile(path + '/pages/contact.html');
 });
+router.get('/blog/test-blog',function(req,res){
+  res.sendFile(path + '/pages/blog-single.html');
+});
 // Try navigating to the /about directory on the website. Now, the about.html page will show.
 // Note: it won't work if you click the "about" button because we haven't changed the code there!
 
