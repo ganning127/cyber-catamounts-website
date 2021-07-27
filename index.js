@@ -49,7 +49,7 @@ router.get('/blog',function(req,res){
 router.get('/team',function(req,res){
   res.sendFile(path + '/pages/team.html');
 });
-router.get('/contact',function(req,res){
+router.get('/challenge',function(req,res){
   res.sendFile(path + '/pages/contact.html');
 });
 router.get('/blog/test-blog',function(req,res){
