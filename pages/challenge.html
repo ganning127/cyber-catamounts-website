@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="/assets/js/script.js"></script>
 
   <!-- =======================================================
   * Template Name: Moderna - v4.1.0
@@ -93,8 +94,8 @@
               <div class="col-md-12">
                 <div class="info-box">
                   <i class="bx bxs-flag-alt"></i>
-                  <h3>The Challenge Name</h3>
-                  <p>Soon, a challenge description will appear here!</p>
+                  <h3 id="challengeName"></h3>
+                  <p id="description"></p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -116,7 +117,7 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/challenge.php" method="post" role="form" class="php-email-form">
+            <form action="" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Team Name" required>
@@ -129,11 +130,13 @@
                 <textarea class="form-control" id="flag" rows="5" placeholder="Flag" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your flag has been submitted. Thank you!</div>
+                <div id="loading" class="loading">Loading</div>
+                <div id="error-message" class="error-message">❌ Sorry! Wrong flag. Try again!</div>
+                <div id="sent-message" class="sent-message">🎉 Your flag is correct. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Submit Flag</button></div>
+              <div class="text-center">
+                <button id="submitFlag" type="submit">Submit Flag</button>
+              </div>
             </form>
           </div>
 
@@ -222,6 +225,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 
