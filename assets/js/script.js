@@ -10,6 +10,13 @@ window.onload = function updateChallenge() {
     document.getElementById("submitFlag").addEventListener("click", async function(event) {
         event.preventDefault()
         document.getElementById("loading").style.display = "inline"
+        try {
+            document.getElementById("error-message").style.display = "none"
+            document.getElementById("success-message").style.display = "none"
+        } catch (e) {
+            console.log("Submitting!")
+        }
+
         console.log("Checking your flag...")
         let result = await fetch('/api/submit', {
             method: 'POST',

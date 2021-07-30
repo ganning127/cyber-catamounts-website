@@ -27,7 +27,6 @@ const addEntry = async (challengeID, challengeName, email, flag, teamName, descr
 };
 
 const checkFlag = (flag) => {
-   console.log(process.env.flag)
     if (flag == process.env.flag) {
         return true;
     } else {

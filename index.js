@@ -29,7 +29,7 @@ router.post('/api/submit', jsonParser, async function(req,res){
   console.log(check)
 
   if (check == true) {
-    let resp = hasura.addEntry(info.challengeID, info.challengeName, info.email, info.flag, info.name, info.challengeDescription)
+    let resp = hasura.addEntry(info.challengeID, info.challengeName, info.name, info.flag, info.email, info.challengeDescription)
     console.log(resp)
     res.send({"status": "success"})
   } else {
