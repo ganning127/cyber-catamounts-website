@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 100px;
 }
 
 #main {
@@ -1555,7 +1555,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  border: 3px solid #69A3C4;
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -1619,7 +1619,7 @@ section {
 
 .map iframe {
   width: 100%;
-  height: 380px;
+  height: 600px;
 }
 
 /*--------------------------------------------------------------
