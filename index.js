@@ -66,16 +66,8 @@ router.get('/index',function(req,res){
   res.sendFile(path + '/pages/index.html');
 });
 
-router.get('/blog',function(req,res){
-  res.sendFile(path + '/pages/blog.html');
-});
-
 router.get('/team',function(req,res){
   res.sendFile(path + '/pages/team.html');
-});
-
-router.get('/blog/test-blog',function(req,res){
-  res.sendFile(path + '/pages/blog-single.html');
 });
 
 // Try navigating to the /about directory on the website. Now, the about.html page will show.
