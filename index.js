@@ -20,10 +20,12 @@ var jsonParser = bodyParser.json();
 app.use('/', router);
 app.use('/assets', express.static(path + '/assets'))
 
+// challenge submission
+
 router.get('/login', function (req, res) {
   var scopes = 'playlist-modify-public playlist-modify-private';
   const client_id = "090f5686143f41f5988044fc4bdc163e";
-  const redirect_uri = "https://stark-plateau-71330.herokuapp.com/success";
+  const redirect_uri = "http://localhost:3000/success";
 
   res.redirect('https://accounts.spotify.com/authorize' +
     '?response_type=code' +
@@ -35,6 +37,11 @@ router.get('/login', function (req, res) {
 router.get('/success', function (req, res) {
   res.sendFile(path + '/pages/success.html');
 });
+
+router.get('/', function (req, res) {
+  res.sendFile(path + '/pages/index.html');
+});
+
 
 // Try navigating to the /about directory on the website. Now, the about.html page will show.
 // Note: it won't work if you click the "about" button because we haven't changed the code there!
