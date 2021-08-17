@@ -20,34 +20,10 @@ var jsonParser = bodyParser.json();
 app.use('/', router);
 app.use('/assets', express.static(path + '/assets'))
 
-// challenge submission
-
-router.post('/api/submit', jsonParser, async function (req, res) {
-  let info = req.body
-  let check = hasura.checkFlag(info.flag)
-  console.log(info)
-  console.log(check)
-
-  if (check == true) {
-    let resp = hasura.addEntry(info.challengeID, info.challengeName, info.name, info.flag, info.email, info.challengeDescription)
-    console.log(resp)
-    res.send({ "status": "success" })
-  } else {
-    res.send({ "status": "fail" })
-  }
-
-  res.sendFile(path + '/pages/challenge.html');
-});
-
-router.get('/', function (req, res) {
-  res.sendFile(path + '/pages/index.html');
-});
-
-
 router.get('/login', function (req, res) {
   var scopes = 'playlist-modify-public playlist-modify-private';
   const client_id = "090f5686143f41f5988044fc4bdc163e";
-  const redirect_uri = "http://localhost:3000/success";
+  const redirect_uri = "https://stark-plateau-71330.herokuapp.com/success";
 
   res.redirect('https://accounts.spotify.com/authorize' +
     '?response_type=code' +
