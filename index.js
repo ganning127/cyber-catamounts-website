@@ -48,3 +48,9 @@ router.get('/', function (req, res) {
 
 app.listen(process.env.PORT || 3000,
   () => console.log("Server is running..."));
+
+
+
+// https://words.bighugelabs.com/admin/92db72d7d8e512f532b0cdddd9f726c0
+// 92db72d7d8e512f532b0cdddd9f726c0
+// https://words.bighugelabs.com/api/2/92db72d7d8e512f532b0cdddd9f726c0/word/json

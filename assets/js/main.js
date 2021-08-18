@@ -6,6 +6,7 @@ navigator.permissions.query({ name: 'camera' })
     console.log('Got error :', error);
   })
 
+let spinner = document.querySelector('.spinner');
 let usePicButton = document.getElementById("submit-pic");
 let dataStr;
 
@@ -36,6 +37,8 @@ document.getElementById("snap").addEventListener('click', () => {
 });
 
 document.getElementById("submit-pic").addEventListener("click", async () => {
+  document.getElementById('submit-pic').classList.add("hidden")
+  spinner.classList.remove("hidden");
   const parts = dataStr.split(';base64,');
 
   const options = {
@@ -51,13 +54,37 @@ document.getElementById("submit-pic").addEventListener("click", async () => {
 
   let data = await resp.json();
   const emotion = manipulateEmotion(data.emotion);
+  const syn = await getSyn(emotion);
 
-  let resp_post = await fetch(`https://spotion.azurewebsites.net/api/spotion-post-hasura?code=Bwd22XFxLtQwvvy2nvZSffDgrSTDdiDRQsz0QfSajI4MXqAtnlpiOQ==&emotion=${emotion}`);
+
+  let resp_post = await fetch(`https://spotion.azurewebsites.net/api/spotion-post-hasura?code=Bwd22XFxLtQwvvy2nvZSffDgrSTDdiDRQsz0QfSajI4MXqAtnlpiOQ==&emotion=${syn}`);
   let data_post = await resp_post.json();
 
   window.location.href = "/login";
 });
 
+async function getSyn(emotion) {
+  const key = "3191a68c-d52f-4eb1-9069-0a85b01d0ac2";
+  const words_url = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${emotion}?key=${key}`;
+
+  let resp = await fetch(words_url);
+  let data = await resp.json();
+
+  let syn_lists = data[0].meta.syns;
+  let syns = [];
+
+  syn_lists.forEach(list => {
+    list.forEach(e => {
+      syns.push(e)
+    })
+  });
+
+  console.log(syns)
+  let syn = syns[Math.floor(Math.random() * syns.length)];
+  console.log(syn)
+  return syn;
+
+}
 
 function _base64ToArrayBuffer(base64) {
   var binary_string = window.atob(base64);
