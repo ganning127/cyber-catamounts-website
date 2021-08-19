@@ -1,19 +1,6 @@
 html {
 	scroll-behavior: smooth;
 }
-body::before {
-	/* background: url('https://i.pinimg.com/originals/4c/9c/45/4c9c457205dbbf4229753b1755866258.gif') center center; */
-	background-size: cover;
-	position: absolute;
-	height: 270vh;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: .2;
-	z-index: -100;
-    content: "";
-}
 
 nav {
 	position: fixed;
@@ -85,7 +72,6 @@ hr {
 .dk-gr {
 	color: #006400;
 }
-
 .grey {
 	color: 	#484848
   }
@@ -180,4 +166,10 @@ iframe {
 }
 p.lead {
 	font-size: 3rem !important;
+}
+.center-all {
+	display: flex;
+	height: 90vh;
+	justify-content: center;
+	align-items: center;
 }
