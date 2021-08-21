@@ -25,7 +25,7 @@ app.use('/assets', express.static(path + '/assets'))
 router.get('/login', function (req, res) {
   var scopes = 'playlist-modify-public playlist-modify-private';
   const client_id = "090f5686143f41f5988044fc4bdc163e";
-  const redirect_uri = "https://stark-plateau-71330.herokuapp.com/success";
+  const redirect_uri = "https://spotion.herokuapp.com/success";
 
   res.redirect('https://accounts.spotify.com/authorize' +
     '?response_type=code' +
