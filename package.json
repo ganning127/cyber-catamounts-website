@@ -1,7 +1,7 @@
 {
-  "name": "cyber-catamounts-website",
+  "name": "Spotion",
   "version": "1.0.0",
-  "description": "CyberCatamounts club website developed by the members of the WebDev team.",
+  "description": "Spotion generates a 50-song Spotify playlist from the emotion in a picture.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
